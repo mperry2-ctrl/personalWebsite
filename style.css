@@ -1,0 +1,177 @@
+/* Reset and typography */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #121212;
+  color: #FFFFFF;
+  height: 100%;
+}
+
+a {
+  color: #1DB954;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Container layout */
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: 220px;
+  background-color: #000000;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.brand {
+  font-size: 24px;
+  margin-bottom: 30px;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #1DB954; /* Now the brand is set to nav-active color */
+  color: #000;              /* Use a dark text for contrast */
+  padding: 10px;
+  border-radius: 4px;
+}
+
+/* On the home page, make the brand background the same as nav-active */
+.home .brand {
+  background-color: #1DB954; /* Same as nav-active */
+  color: #000; /* Contrast color for readability */
+}
+
+
+
+
+nav {
+  width: 100%;
+}
+
+.nav-item {
+  display: block;
+  padding: 10px;
+  margin: 5px 0;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.nav-item:hover {
+  background-color: #1DB95433;
+}
+
+/* On non-home pages, swap the active color: active nav gets the brand default */
+.nav-item.active {
+  background-color: #2C2C2C; /* This was the original brand background */
+  color: #1DB954;
+}
+
+/* Main content area */
+.main-content {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 40px;
+}
+
+/* Section headers */
+.section-header {
+  font-size: 28px;
+  border-bottom: 2px solid #1DB954;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+/* Home page specific styling */
+#home {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.links {
+  margin-top: 20px;
+}
+
+.link-btn {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: #1DB954;
+  color: #000;
+  border-radius: 4px;
+}
+
+/* Tools Grid Styles */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* Tools Grid Styles */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.tool-card {
+  background-color: #1e1e1e;
+  padding: 20px;       /* Reduced padding for a slimmer look */
+  border-radius: 8px;
+  text-align: center;
+  max-width: 350px;    /* Limit the width to keep the card thinner */
+  margin: 0 auto;      /* Center the card within its grid cell */
+}
+
+
+.tool-card h3 {
+  margin-top: 0;
+}
+
+.tool-card p {
+  margin: 10px 0;
+}
+
+/* Mobile-specific styling: turn sidebar into top taskbar */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  .brand {
+    margin: 0;
+    font-size: 20px; /* Adjust the size if needed */
+  }
+  nav {
+    display: flex;
+    gap: 10px;
+  }
+  .nav-item {
+    padding: 8px 12px;
+    text-align: center;
+    border-radius: 4px;
+    flex: none;
+  }
+  .main-content {
+    padding: 20px;
+  }
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+}
