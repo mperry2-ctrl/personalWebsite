@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Image to PDF Converter</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- Include jsPDF from a CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar / Taskbar -->
+    <div class="sidebar">
+      <a href="index.html" class="brand">Michael Perry</a>
+      <nav>
+        <a href="personal.html" class="nav-item">Personal</a>
+        <a href="tools.html" class="nav-item active">Tools</a>
+      </nav>
+    </div>
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs">
+        <a href="tools.html">Tools</a> &gt; 
+        <span>Image to PDF Converter</span>
+      </nav>
+      <section id="convert">
+        <h2>Image to PDF Converter</h2>
+        <div class="converter-container">
+          <input type="file" id="imageInput" accept="image/*">
+          <div id="previewContainer">
+            <img id="imagePreview" src="" alt="Image Preview" style="display:none; max-width: 200px; border: 1px solid #444; padding: 4px; margin-top: 10px;">
+          </div>
+          <button id="convertButton">Convert to PDF</button>
+          <a id="downloadLink" style="display:none;" download="converted.pdf">Download PDF</a>
+        </div>
+      </section>
+    </div>
+  </div>
+  <script src="convert.js"></script>
+</body>
+</html>
