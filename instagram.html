@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Instagram Unfollowers Tool</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar / Taskbar -->
+    <div class="sidebar">
+      <a href="index.html" class="brand">Michael Perry</a>
+      <nav>
+        <a href="personal.html" class="nav-item">Personal</a>
+        <a href="tools.html" class="nav-item active">Tools</a>
+      </nav>
+    </div>
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs">
+        <a href="tools.html">Tools</a> &gt; 
+        <span>Instagram Unfollowers Tool</span>
+      </nav>
+      <section id="instagram-tool">
+        <h2>Instagram Unfollowers Tool</h2>
+        <p>
+            <a href="#" id="showInstructionsLink">How do I download my Instagram data?</a>
+          </p>
+          <div id="instructions" style="display: none; border: 1px solid #444; padding: 10px; margin-bottom: 20px;">
+            <h3>Instructions to Download Your Instagram Data</h3>
+            <ol>
+              <li>Go to your profile and click on "More" (works for the app or browser).</li>
+              <li>At the bottom, click on "Download your Information" and select "Download or Transfer your Information".</li>
+              <li>Select "Some of your information".</li>
+              <li>Under the "Connections" section, only select "Followers and following" and hit "Next".</li>
+              <li>Select "Download to Device".</li>
+              <li>Click "Date range" and select "All time".</li>
+              <li><b>IMPORTANT: </b>Click "Format" and select "JSON".</li>
+              <li>Click "Media Quality" and select "Low" (hopefully makes it faster).</li>
+              <li>Click "Create files" and return when your data is done downloading (this can take about a day sometimes).</li>
+            </ol>
+          </div>
+        <p>
+          Upload your downloaded Instagram data files below to see which accounts you follow that don't follow you back. 
+        </p>
+        <form id="instagramForm">
+          <label for="zipFile">Upload Instagram Data ZIP File:</label>
+          <input type="file" id="zipFile" accept=".zip" required>
+          <br><br>
+          <button type="submit">Check Unfollowers</button>
+        </form>
+        <div id="results" style="margin-top: 20px;">
+          <!-- Results will be shown here -->
+        </div>
+      </section>
+    </div>
+  </div>
+  <script src="instagram.js"></script>
+</body>
+</html>
